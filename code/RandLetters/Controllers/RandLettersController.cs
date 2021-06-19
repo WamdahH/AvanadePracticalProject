@@ -11,13 +11,29 @@ namespace RandLetters.Controllers
     [Route("[controller]")]
     public class RandLettersController : ControllerBase
     {
-        static void Main()
+        [HttpGet]
+        public ActionResult<string> Get(int length = 2)
         {
-            Random random = new Random();
-            // random lowercase letter
-            int a = random.Next(0, 26);
-            char ch = (char)('a' + a);
-            Console.WriteLine(ch);
+            const string upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var random = new Random();
+            var randomLetter = new string(Enumerable.Repeat(upperCaseLetters, length).Select(s => s[random.Next(s.Length)]).ToArray());
+            return randomLetter.ToString();
         }
+        [HttpGet("{length}")]
+        public ActionResult<string> GetLetter(int length = 3)
+        {
+            const string lowerCaseLetters = "abdcefghijklmnopqrstuvwxyz";
+            var random = new Random();
+            var randomLetter = new string(Enumerable.Repeat(lowerCaseLetters, length).Select(s => s[random.Next(s.Length)]).ToArray());
+            return randomLetter.ToString();
+        }
+        // public void Main()
+        // {
+        //Random random = new();
+        // random lowercase letter
+        //int a = random.Next(0, 26);
+        //char ch = (char)('a' + a);
+        //return ch;
+        //}
     }
 }

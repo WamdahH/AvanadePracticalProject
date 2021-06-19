@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace Merge.Controllers
@@ -12,15 +13,25 @@ namespace Merge.Controllers
     [Route("[controller]")]
     public class MergeController : ControllerBase
     {
-        //numbers: https://localhost:44361/
-        //letters : https://localhost:44321/
+        private IConfiguration Configuration; 
+
+
+        public MergeController (IConfiguration configuration)
+        {
+            Configuration = configuration;
+
+        }
+
+        // https://localhost:44361/rannumbers?length=6
+        //https://localhost:44321/randletters?length=3
+
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var numbersService = "https://localhost:44361/randnumbers";
+            var numbersService = "http://localhost:34689/RandNumbers/6";
             var numbersResponseCall = await new HttpClient().GetStringAsync(numbersService);
 
-            var lettersService = "https://localhost:44321/randletters";
+            var lettersService = "http://localhost:4349/RandLetters/2";
             var lettersResponseCall = await new HttpClient().GetStringAsync(lettersService);
 
             var mergedResponse = $"{numbersResponseCall}{lettersResponseCall}";
