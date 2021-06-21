@@ -20,7 +20,7 @@ namespace Merge.Controllers
         {
             Configuration = settings.Value;
         }
-
+     
 
         [HttpGet]
         public async Task<IActionResult> Get()

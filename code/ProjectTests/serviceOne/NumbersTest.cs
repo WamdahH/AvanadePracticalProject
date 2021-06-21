@@ -7,17 +7,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Xunit;
-using RandNumbers;
+
 
 
 namespace ProjectTests.serviceOne
 {
-    class serviceOne
+    public class NumbersTest
     {
-        public void GetRandNumberTest()
+        [Fact]
+        public void GetTest()
         {
             RandNumbersController randNumbersController = new RandNumbersController();
-            var randomNumberControllerResult = randNumbersController.GetType();
+            var randomNumberControllerResult = randNumbersController.GetNumber();
 
             Assert.NotNull(randomNumberControllerResult);
             Assert.IsType<ActionResult<string>>(randomNumberControllerResult);

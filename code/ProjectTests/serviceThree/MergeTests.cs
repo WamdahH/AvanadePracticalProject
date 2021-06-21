@@ -12,16 +12,16 @@ using Xunit;
 
 namespace ProjectTests.serviceThree
 {
-    public class serviceThreeTests
+    public class MergeTests
     {
         private AppSettings appSettings = new AppSettings()
         {
-            numbersServiceURL = "",
-            lettersServiceURL = ""
+            numbersServiceURL = "https://randnumbers.azurewebsites.net",
+            lettersServiceURL = "https://randletters.azurewebsites.net"
 
         };
         [Fact]
-        public async void GetTests()
+        public async void GetTest()
         {
             var options = new Mock<IOptions<AppSettings>>();
             options.Setup(x => x.Value).Returns(appSettings);

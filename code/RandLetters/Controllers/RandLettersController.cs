@@ -12,7 +12,7 @@ namespace RandLetters.Controllers
     public class RandLettersController : ControllerBase
     {
         [HttpGet]
-        public ActionResult<string> Get(int length = 2)
+        public ActionResult<string> GetUpperCase(int length = 2)
         {
             const string upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             var random = new Random();
@@ -20,20 +20,13 @@ namespace RandLetters.Controllers
             return randomLetter.ToString();
         }
         [HttpGet("{length}")]
-        public ActionResult<string> GetLetter(int length = 3)
+        public ActionResult<string> GetLowerCase(int length = 3)
         {
             const string lowerCaseLetters = "abdcefghijklmnopqrstuvwxyz";
             var random = new Random();
             var randomLetter = new string(Enumerable.Repeat(lowerCaseLetters, length).Select(s => s[random.Next(s.Length)]).ToArray());
             return randomLetter.ToString();
         }
-        // public void Main()
-        // {
-        //Random random = new();
-        // random lowercase letter
-        //int a = random.Next(0, 26);
-        //char ch = (char)('a' + a);
-        //return ch;
-        //}
+     
     }
 }
