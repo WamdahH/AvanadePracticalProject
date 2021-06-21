@@ -13,7 +13,7 @@ namespace FrontEnd.Controllers
 {
     public class HomeController : Controller
 
-    { private IConfiguration Configuration;
+    { private readonly IConfiguration Configuration;
          
          
 

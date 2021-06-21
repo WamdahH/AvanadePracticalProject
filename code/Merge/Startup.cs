@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,16 @@ namespace Merge
 {
     public class Startup
     {
+        public Startup(IWebHostEnvironment env)
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
+        }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,10 +38,11 @@ namespace Merge
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRouting(r => r.LowercaseUrls = true);
+            services.Configure<AppSettings>(options => Configuration.GetSection("AppSettings").Bind(options));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Merge", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TeamAssignment", Version = "v1" });
             });
         }
 
