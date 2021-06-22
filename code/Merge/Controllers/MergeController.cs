@@ -14,26 +14,21 @@ namespace Merge.Controllers
     [Route("[controller]")]
     public class MergeController : ControllerBase
     {
-      
+
         private AppSettings Configuration;
         public MergeController(IOptions<AppSettings> settings)
         {
             Configuration = settings.Value;
         }
-     
-
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var numbersService = $"{Configuration.numbersServiceURL}/numbers";
+            var numbersService = $"{Configuration.numbersServiceURL}/randnumbers/6";
             var numbersResponseCall = await new HttpClient().GetStringAsync(numbersService);
-
-            var lettersService = $"{Configuration.lettersServiceURL}/letters";
+            var lettersService = $"{Configuration.lettersServiceURL}/randletters/2";
             var lettersResponseCall = await new HttpClient().GetStringAsync(lettersService);
-
-            var mergedResponse = $"{numbersResponseCall}{lettersResponseCall}";
+            var mergedResponse = $"{lettersResponseCall}{numbersResponseCall}";
             return Ok(mergedResponse);
         }
-
     }
 }
