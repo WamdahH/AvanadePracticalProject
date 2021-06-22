@@ -11,10 +11,10 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("FrontEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\wamdah.hassan\\source\\repos\\AvanadePracticalProject\\code\\FrontEnd", "FrontEnd.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Merge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\wamdah.hassan\\source\\repos\\AvanadePracticalProject\\code\\Merge", "Merge.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("RandLetters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\wamdah.hassan\\source\\repos\\AvanadePracticalProject\\code\\RandLetters", "RandLetters.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("RandNumbers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\wamdah.hassan\\source\\repos\\AvanadePracticalProject\\code\\RandNumbers", "RandNumbers.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("FrontEnd, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\wamdah.hassan\\source\\repos\\new\\code\\FrontEnd", "FrontEnd.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Merge, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\wamdah.hassan\\source\\repos\\new\\code\\Merge", "Merge.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("RandLetters, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\wamdah.hassan\\source\\repos\\new\\code\\RandLetters", "RandLetters.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("RandNumbers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\wamdah.hassan\\source\\repos\\new\\code\\RandNumbers", "RandNumbers.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjectTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
