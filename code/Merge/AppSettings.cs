@@ -7,7 +7,6 @@ namespace Merge
 {
     public class AppSettings
     {
-
         public string numbersServiceURL { get; set; }
         public string lettersServiceURL { get; set; }
     }
