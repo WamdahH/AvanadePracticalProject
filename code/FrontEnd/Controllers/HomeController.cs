@@ -8,26 +8,26 @@ using Microsoft.Extensions.Logging;
 using FrontEnd.Models;
 using System.Net.Http;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace FrontEnd.Controllers
 {
     public class HomeController : Controller
 
-    { private readonly IConfiguration Configuration;
-         
-         
+    {
+        private AppSettings Configuration;
 
-        public HomeController(IConfiguration configuration)
+        public HomeController(IOptions<AppSettings> settings)
         {
-            
-             Configuration = configuration;
+            Configuration = settings.Value;
         }
-      
-       public async Task<IActionResult> Index()
+
+        public async Task<IActionResult> Index()
         {
-            var mergedService = $"{Configuration["mergedServiceURL"]}/Merge";
-            var mergedResponseCall = await new HttpClient().GetStringAsync(mergedService);
-            ViewBag.responseCall = mergedResponseCall;
+            var mergedService = $"{Configuration.mergedServiceURL}/Merge";
+            var serviceThreeResponseCall = await new HttpClient().GetStringAsync(mergedService);
+            ViewBag.responseCall = serviceThreeResponseCall;
+
             return View();
         }
     }
