@@ -25,8 +25,8 @@ namespace FrontEnd.Controllers
         public async Task<IActionResult> Index()
         {
             var mergedService = $"{Configuration.mergedServiceURL}/Merge";
-            var serviceThreeResponseCall = await new HttpClient().GetStringAsync(mergedService);
-            ViewBag.responseCall = serviceThreeResponseCall;
+            var mergedResponseCall = await new HttpClient().GetStringAsync(mergedService);
+            ViewBag.responseCall = mergedResponseCall;
 
             return View();
         }

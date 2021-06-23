@@ -17,11 +17,11 @@ namespace ProjectTests.serviceThree
         private AppSettings appSettings = new AppSettings()
         {
             numbersServiceURL = "https://wamdahhassan-randnumbers-service.azurewebsites.net",
-            lettersServiceURL = "https://wamdahhassan-randletters-service.azurewebsites.net"
-
+            lettersServiceURL = "https://wamdahhassan-randletters-service.azurewebsites.net",
+            specialCharacterServiceURL = "https://wamdahhassan-randspecialcharacters-service.azurewebsites.net"
         };
         [Fact]
-        public async void Gett()
+        public async void Get()
         {
             var options = new Mock<IOptions<AppSettings>>();
             options.Setup(x => x.Value).Returns(appSettings);

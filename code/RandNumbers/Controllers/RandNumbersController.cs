@@ -12,7 +12,6 @@ namespace RandNumbers.Controllers
     [Route("[controller]")]
     public class RandNumbersController : ControllerBase
     {
-   
 
             [HttpGet("{length}")]
             public ActionResult<string> GetNumber(int length = 6 & 8)

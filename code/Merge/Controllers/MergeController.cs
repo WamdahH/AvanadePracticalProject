@@ -25,8 +25,10 @@ namespace Merge.Controllers
         {
             var numbersService = $"{Configuration.numbersServiceURL}/randnumbers/6";
             var numbersResponseCall = await new HttpClient().GetStringAsync(numbersService);
-            var lettersService = $"{Configuration.lettersServiceURL}/randletters/2";
+
+            var lettersService = $"{Configuration.lettersServiceURL}/randletters/3";
             var lettersResponseCall = await new HttpClient().GetStringAsync(lettersService);
+
             var mergedResponse = $"{lettersResponseCall}{numbersResponseCall}";
             return Ok(mergedResponse);
         }

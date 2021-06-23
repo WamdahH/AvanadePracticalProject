@@ -9,5 +9,6 @@ namespace Merge
     { 
         public string numbersServiceURL { get; set; }
         public string lettersServiceURL { get; set; }
+        public string specialCharacterServiceURL { get; set; }
     }
 }
