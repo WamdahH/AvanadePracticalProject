@@ -5,11 +5,10 @@ on:
     - master
 env:
   AZURE_WEBAPP_NAME: wamdahhassan-frontend-service
-  AZURE_WEBAPP_PACKAGE_PATH: .code/Fortune/publish
-  AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.wamdahhassan_frontend_service_065c }}
+  AZURE_WEBAPP_PACKAGE_PATH: .code/Frontend/publish
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 5.0.x
-  WORKING_DIRECTORY: .code/Fortune/
+  WORKING_DIRECTORY: ./code/Frontend/
 jobs:
   build-and-deploy:
     runs-on: windows-latest

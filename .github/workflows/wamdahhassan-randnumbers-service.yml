@@ -5,11 +5,11 @@ on:
     - master
 env:
   AZURE_WEBAPP_NAME: wamdahhassan-randnumbers-service
-  AZURE_WEBAPP_PACKAGE_PATH: .code/Fortune/publish
+  AZURE_WEBAPP_PACKAGE_PATH: .code/randNumbers/publish
   AZURE_WEBAPP_PUBLISH_PROFILE: ${{ secrets.wamdahhassan_randnumbers_service_2bf9 }}
   CONFIGURATION: Release
   DOTNET_CORE_VERSION: 5.0.x
-  WORKING_DIRECTORY: .code/Fortune
+  WORKING_DIRECTORY: ./code/randNumbers
 jobs:
   build-and-deploy:
     runs-on: windows-latest
