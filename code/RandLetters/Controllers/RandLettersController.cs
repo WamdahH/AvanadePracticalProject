@@ -19,14 +19,14 @@ namespace RandLetters.Controllers
             var randomLetter = new string(Enumerable.Repeat(upperCaseLetters, length).Select(s => s[random.Next(s.Length)]).ToArray());
             return randomLetter.ToString();
         }
-      /*  [HttpGet("{length}")]
+        [HttpGet("{length}")]
         public ActionResult<string> GetLowerCase(int length = 3)
         {
             const string lowerCaseLetters = "abdcefghijklmnopqrstuvwxyz";
             var random = new Random();
             var randomLetter = new string(Enumerable.Repeat(lowerCaseLetters, length).Select(s => s[random.Next(s.Length)]).ToArray());
             return randomLetter.ToString();
-        }*/
+        }
      
     }
 }
